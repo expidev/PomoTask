@@ -6,7 +6,7 @@ Pomotask is a console app that helps users break milestone projects into tasks. 
 
 The purpose of this project is to learn the C++ programming language. I have learned about the syntax of C++ and how to use it to create a console application. I have also learned how to modularize my code with classes and functions. I have also covered on how to output and input data to add from console. Finally, the app is a way to show my understanding of C++ to have a CRUD application. As a bonus, I learned about the basic of file manipulation to save and load tasks from a file.
 
-[Demo Video](http://youtube.link.goes.here)
+
 
 # Development Environment
 
