@@ -2,7 +2,9 @@
 
 // Constructor
 
-Task::Task(int id, const std::string& action)
+Task::Task(int id, const std::string& action, 
+			TaskStatus status, 
+			int pomodoroCount, int passedMinutes)
 	: id(id), action(action), status(TaskStatus::Pending),
 	pomodoroCount(0), passedMinutes(0)
 {}
@@ -24,6 +26,10 @@ int Task::getPassedMinutes() const {
 	return passedMinutes;
 }
 
+TaskStatus Task::getStatus() const {
+	return status;
+}
+
 // Setter
 void Task::setAction(const std::string& newAction) {
 	action = newAction;
@@ -34,7 +40,10 @@ void Task::setStatus(TaskStatus newStatus) {
 }
 
 // Other functions
-void Task::addPomodoro(int durationMinutes) {
-	pomodoroCount++;
+void Task::addPassedMinutes(int durationMinutes) {
 	passedMinutes += durationMinutes;
+}
+
+void Task::addPomodoroCount() {
+	pomodoroCount += 1;
 }

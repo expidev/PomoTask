@@ -16,7 +16,9 @@ class Task {
 		int			passedMinutes;
 
 	public:
-		Task(int id, const std::string& action);
+		Task(int id, const std::string& action, 
+			TaskStatus status = TaskStatus::Pending, 
+			int pomodoroCount = 0, int passedMinutes = 0);
 
 		int	getId() const;
 		std::string getAction() const;
@@ -26,5 +28,6 @@ class Task {
 		
 		void setAction(const std::string& newAction);
 		void setStatus(TaskStatus newStatus);
-		void addPomodoro(int durationMinutes = 25);
+		void addPassedMinutes(int durationMinutes = 25);
+		void addPomodoroCount();
 };
