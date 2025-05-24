@@ -6,6 +6,7 @@
 
 namespace fs = std::filesystem;
 
+// list all project in the data folder
 void listProjects()
 {
 	std::cout << "Listing all projects..." << std::endl;
@@ -24,7 +25,7 @@ void listProjects()
 	}
 	std::cout << std::endl;
 }
-
+// add a task to the project by their input name
 void addTask(Project& project)
 {
 	std::string taskName;
@@ -39,7 +40,7 @@ void addTask(Project& project)
 	std::cout << "\033[32mTask added: " << taskName << "\033[0m" << std::endl;
 	std::cout << std::endl;
 }
-
+// update a task in the project by their input id and the new action
 void updateTask(Project& project)
 {
 	int id;
@@ -66,7 +67,7 @@ void updateTask(Project& project)
 	else
 		std::cout << "Task not found." << std::endl;
 }
-
+// remove a task from the project by their input id
 void removeTask(Project& project)
 {
 	int id;
@@ -89,6 +90,7 @@ void removeTask(Project& project)
 	else
 		std::cout << "Task not found." << std::endl;
 }
+// start a Pomodoro for a task from their input id and the corresponding project
 void startPomodoro(Project& project)
 {
 	int id;
@@ -125,7 +127,7 @@ void printProjectMenu()
 	std::cout << "5. Start Pomodoro" << std::endl;
 	std::cout << "6. Back" << std::endl;
 }
-
+// load the project menu and handle user input according to the choice
 void loadProjectMenu(Project& project)
 {
 	int choice = -1;
@@ -181,7 +183,7 @@ void loadProjectMenu(Project& project)
 		}
 	}
 }
-
+// load an existant project and load the project menu
 bool loadProject(std::string& projectName)
 {
 	Project project(projectName);
@@ -197,7 +199,7 @@ bool loadProject(std::string& projectName)
 	loadProjectMenu(project);
 	return true;
 }
-
+// create a new project and load the project menu
 void createNewProject(std::string& projectName)
 {
 	Project project(projectName);

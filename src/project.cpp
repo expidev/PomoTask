@@ -18,6 +18,7 @@ const std::vector<Task>& Project::getTasks() const {
 	return tasks;
 }
 
+// list all tasks in the project
 void	Project::listTasks() {
 	std::cout << std::endl;
 	std::cout << "\033[35m";
@@ -48,6 +49,7 @@ Task* Project::getTaskById(int id) {
 	return nullptr;
 }
 
+// add task to the project
 int Project::addTask(const std::string& action, 
 	TaskStatus status, int pomodoroCount, int passedMinutes) {
 	Task newTask(++lastTaskId, action, status, pomodoroCount, passedMinutes);
@@ -55,6 +57,7 @@ int Project::addTask(const std::string& action,
 	return lastTaskId;
 }
 
+// remove task by id
 int Project::removeTask(int id) {
 	for (size_t i = 0; i < tasks.size(); ++i) {
 		if (tasks[i].getId() == id) {
@@ -65,6 +68,7 @@ int Project::removeTask(int id) {
 	return -1;
 }
 
+// update task action by id
 int Project::updateTask(int id, const std::string& newAction) {
 	Task* task = getTaskById(id);
 	if (task) {
@@ -75,6 +79,8 @@ int Project::updateTask(int id, const std::string& newAction) {
 }
 
 // Storage Method
+
+// load file from csv in the following format action, status, pomodoroCount, passedMinutes
 bool Project::loadFile(const std::string& filename) {
 	std::string path = "data/" + filename;
 	std::ifstream file(path);
@@ -118,6 +124,7 @@ bool Project::loadFile(const std::string& filename) {
 	return true;
 }
 
+// save file into csv in the following format action, status, pomodoroCount, passedMinutes
 void Project::saveFile(const std::string& filename) {
 	std::string path = "data/" + filename;
 	TaskStatus e_status;

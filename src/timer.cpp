@@ -5,6 +5,7 @@
 #include "timer.hpp"
 #include "task.hpp"
 
+// run a session for the given label and duration
 void Timer::runSession(const std::string &label, int duration) {
 	std::cout << "Starting " << label << " session for " << duration << " minutes." << std::endl;
 
@@ -19,6 +20,7 @@ void Timer::runSession(const std::string &label, int duration) {
 	std::system("aplay music/triskelion.wav > /dev/null 2>&1");
 }
 
+// ask the user before starting a session
 bool Timer::askBeforeSession(const std::string& label) {
 	std::string choice;
 	std::cout << label;
@@ -34,6 +36,7 @@ bool Timer::askBeforeSession(const std::string& label) {
 	}
 }
 
+// start a Pomodoro cycle for the given task
 void Timer::startPomodoro(Task& task, int duration = 30) {
 	int sessionCount = 0;
 

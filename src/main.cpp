@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 
+// execute the action from the main menu based on the given choice
 bool executeChoice()
 {
 	int choice = -1;
@@ -57,7 +58,7 @@ bool executeChoice()
 	}
 	return true;
 }
-
+// load the main menu and execute the appropriate action based on the choice
 int	main(int argc, char **argv) {
 	int choice = -1;
 

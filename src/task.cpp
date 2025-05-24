@@ -39,11 +39,12 @@ void Task::setStatus(TaskStatus newStatus) {
 	status = newStatus;
 }
 
-// Other functions
+// increase the passedMinutes of the task to the durationMinutes
 void Task::addPassedMinutes(int durationMinutes) {
 	passedMinutes += durationMinutes;
 }
 
+// Increment the pomodoroCount
 void Task::addPomodoroCount() {
 	pomodoroCount += 1;
 }
